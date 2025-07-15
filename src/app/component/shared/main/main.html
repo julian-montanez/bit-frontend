@@ -3,12 +3,16 @@
         <a href="">
             <img src="" alt="log">
         </a>
-        <div>
-            <p>buscador</p>
-        </div>
     </div>
     <div class="sig-log">
+    @if (!usernName) {
         <a routerLink="log-in">log in</a>
         <a routerLink="sign-up">sign up</a>
+    } @else {
+        <a routerLink="create-info">create info</a>
+        <button class="log-out" (click)="logOut()">log out</button>
+        <!-- <a routerLink="log-in">log in</a>
+        <a routerLink="sign-up">sign up</a> -->
+    }
     </div>
 </div>

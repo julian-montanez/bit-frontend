@@ -5,6 +5,7 @@ import { PageNoFound } from './component/pages/page-no-found/page-no-found';
 import { AboutUs } from './component/pages/about-us/about-us';
 import { SignUp } from './component/pages/sign-up/sign-up';
 import { LogIn } from './component/pages/log-in/log-in';
+import { CreateInfo } from './component/pages/create-info/create-info';
 
 export const routes: Routes = [
     {
@@ -31,6 +32,11 @@ export const routes: Routes = [
         path : "sign-up",
         component:SignUp,
         title: "page | sing up"
+    },
+    {
+        path : "create-info",
+        component:CreateInfo,
+        title: "page | create-info"
     },
     {
         path: "",

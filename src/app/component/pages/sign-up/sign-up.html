@@ -1,20 +1,22 @@
-<form [formGroup]="formSignUp" (ngSubmit)="submitForm()">
-    <legend>sign up</legend>
-    <div>
-        <label for="name">name</label>
-        <input type="text" id="name" formControlName="name">
-    </div>
-    <div>
-        <label for="email">email</label>
-        <input type="text" id="email" formControlName="email">
-    </div>
-    <div>
-        <label for="password">password</label>
-        <input type="password" id="password" formControlName="password">
-    </div>
-    <div>
-        <label for="VPassword">verify password</label>
-        <input type="password" id="VPassword" formControlName="VPassword">
-    </div>
-    <input type="submit">
-</form>
+<div class="SU-container">
+    <form [formGroup]="formSignUp" (ngSubmit)="submitForm()">
+        <legend>sign up</legend>
+        <div>
+            <label for="name">name</label>
+            <input type="text" id="name" formControlName="name">
+        </div>
+        <div>
+            <label for="email">email</label>
+            <input type="text" id="email" formControlName="email">
+        </div>
+        <div>
+            <label for="password">password</label>
+            <input type="password" id="password" formControlName="password">
+        </div>
+        <div>
+            <label for="VPassword">verify password</label>
+            <input type="password" id="VPassword" formControlName="VPassword">
+        </div>
+        <input type="submit">
+    </form>
+</div>

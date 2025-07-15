@@ -1,12 +1,14 @@
-<form [formGroup]="formLogIn" (submit)="submitLogIn()">
-    <legend>log in</legend>
-    <div>
-        <label for="email">email</label>
-        <input type="text" id="email" formControlName="email">
-    </div>
-    <div>
-        <label for="password">password</label>
-        <input type="password" id="password" formControlName="password">
-    </div>
-    <input type="submit">
-</form>
+<div class="LI-container">
+    <form [formGroup]="formLogIn" (submit)="submitLogIn()">
+        <legend>log in</legend>
+        <div>
+            <label for="email">email</label>
+            <input type="text" id="email" formControlName="email">
+        </div>
+        <div>
+            <label for="password">password</label>
+            <input type="password" id="password" formControlName="password">
+        </div>
+        <input type="submit">
+    </form>
+</div>

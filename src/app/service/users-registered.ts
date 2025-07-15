@@ -8,7 +8,7 @@ export class UsersRegistered {
 constructor() { }
 
 private httpclient = inject(HttpClient)
-private api = "http://localhost:3000/user";
+private api = "http://localhost:3000/user/sign-up";
 
 putUser(payload:any){
   return this.httpclient.post(this.api, payload)
