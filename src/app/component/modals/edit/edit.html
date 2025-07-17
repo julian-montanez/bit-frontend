@@ -3,7 +3,7 @@
     <form [formGroup]="post" (ngSubmit)="submitInfo()">
         <div>
             <label for="nameDessertEdit">name dessert</label>
-            <textarea type="text"  formControlName="nameDessert" id="nameDessertEdit"></textarea>
+            <textarea type="text"  formControlName="nameDessert" id="nameDessertEdit">{{print.nameDessert}}</textarea>
         </div>
         <div>
             <label for="ingredientsEdit">ingredients</label>

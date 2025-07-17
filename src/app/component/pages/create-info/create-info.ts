@@ -7,13 +7,14 @@ import { LoginServices } from '../../../service/login-services';
 import { RouterLink } from '@angular/router';
 import { DeleteInfo } from '../../../service/delete-info';
 import { Edit } from '../../modals/edit/edit';
+import { Delete } from '../../modals/delete/delete';
 import { COModal } from '../../../service/co-modal';
 
 const jwtHelper = new JwtHelperService()
 
 @Component({
   selector: 'app-create-info',
-  imports: [FormsModule, ReactiveFormsModule, RouterLink, Edit],
+  imports: [FormsModule, ReactiveFormsModule, RouterLink, Edit,],
   templateUrl: './create-info.html',
   styleUrl: './create-info.css'
 })
@@ -22,7 +23,7 @@ export class CreateInfo implements OnInit {
   postInfo = inject(PostInfo)
   api = inject(InfoApi)
   deleteInfo = inject(DeleteInfo)
-  openEdit = inject(COModal)
+  COmodal = inject(COModal)
   form: any
   userInfo!: any
   user!: object
@@ -91,7 +92,7 @@ export class CreateInfo implements OnInit {
   }
 
   edit(cat:string, id:string){
-    this.openEdit.openEdit()
+    this.COmodal.openEdit()
     this.editCat = cat
     this.editId = id
     console.log(cat, id);

@@ -42,7 +42,7 @@ export const routes: Routes = [
         canActivate:[activateGuard]
     },
     {
-        path : "info-post/:nameDessert", 
+        path : "info-post/:category/:_id", 
         component:InfoPost,
         title: "page | posts" 
     },

@@ -31,9 +31,10 @@
 <div class="post-user">
     @for(post of info; track $index){
         <div class="post">
-            <a routerLink="/info-post/{{post.nameDessert}}" class="post-link">
+            <a routerLink="/info-post/{{post.category}}/{{post._id}}" class="post-link">
+                <img src="{{post.image}}" alt="{{post.nameDessert}}" class="image">
                 <p>{{post.nameDessert}}</p>
-                <p>{{post._id}}</p>
+                <p>{{post.category}}</p>
             </a>
             <div class="button-options">
                 <button class="delete" (click)="delete(post._id)">
@@ -46,7 +47,7 @@
         </div>
     }
 </div>
-@if (!this.openEdit.response) {
+@if (!this.COmodal.response) {
     <app-edit [cat]="editCat" [id]="editId"/>
 } @else {
     

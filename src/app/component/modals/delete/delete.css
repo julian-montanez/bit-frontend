@@ -1,0 +1,16 @@
+.delete-modal{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(158, 158, 158, 0.501);
+    position: sticky;
+    top: 0;
+}
+
+.warning-delete{
+    width: 700px;
+    height: 400px;
+    background-color: aliceblue;
+}

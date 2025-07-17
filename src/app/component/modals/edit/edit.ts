@@ -2,6 +2,7 @@ import { Component, inject, Input, OnInit } from '@angular/core';
 import { COModal } from '../../../service/co-modal';
 import { ReactiveFormsModule, FormGroup, Validators, FormControl } from '@angular/forms';
 import { UpdateInfo } from '../../../service/update-info';
+import { Info } from '../../../interface/info';
 
 @Component({
   selector: 'app-edit',
@@ -15,11 +16,12 @@ export class Edit implements OnInit{
   printEdit!: any
   @Input() cat:string = ""
   @Input() id:string = ""
-  print: any
+  print!:any
 
   ngOnInit(): void {
     this.updateInfo.printInfo(this.cat, this.id).subscribe((res:any)=>{
-      this.print = res.data[0]
+      const {nameDessert, ingredients, howToMake, category, image} = res.data[0];
+      this.print = {nameDessert, ingredients, howToMake, category, image}
       console.log(this.print);
     })
   }
@@ -41,5 +43,6 @@ export class Edit implements OnInit{
       next: (respuesta) => console.log('Actualizado:', respuesta),
       error: (error) => console.error('Error al actualizar:', error)
     })
+    window.location.reload()
   }
 }
