@@ -1,25 +1,53 @@
 <div class="CI-container">
-    <form>
+    <form [formGroup]="post" (ngSubmit)="submitInfo()">
         <div>
             <label for="nameDessert">name dessert</label>
-            <input type="text">
+            <input type="text"  formControlName="nameDessert" id="nameDessert">
         </div>
         <div>
             <label for="ingredients">ingredients</label>
-            <input type="text">
+            <input type="text" formControlName="ingredients" id="ingredients">
         </div>
         <div>
             <label for="preparation">preparation</label>
-            <input type="text">
+            <input type="text" formControlName="howToMake" id="preparation">
         </div>
         <div>
-            <label for="cateory">category</label>
-            <input type="search">
+            <label for="category">category</label>
+            <select name="category" formControlName="category" id="category">
+                <option value="pasteles">pasteles</option>
+                <option value="helados">helados</option>
+                <option value="bebidas">bebidas</option>
+                <option value="otros">otros</option>
+            </select>
         </div>
         <div>
-            <label for="cateory">image</label>
-            <input type="file" accept="image/*">
+            <label for="image">image</label>
+            <input type="text" formControlName="image" id="image">
         </div>
         <button type="submit">post</button>
     </form>
 </div>
+<div class="post-user">
+    @for(post of info; track $index){
+        <div class="post">
+            <a routerLink="/info-post/{{post.nameDessert}}" class="post-link">
+                <p>{{post.nameDessert}}</p>
+                <p>{{post._id}}</p>
+            </a>
+            <div class="button-options">
+                <button class="delete" (click)="delete(post._id)">
+                    delete
+                </button>
+                <button class="edit" (click)="edit(post.category, post._id)">
+                    edit
+                </button>
+            </div>
+        </div>
+    }
+</div>
+@if (!this.openEdit.response) {
+    <app-edit [cat]="editCat" [id]="editId"/>
+} @else {
+    
+}

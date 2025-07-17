@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { InfoApi } from '../../../service/info-api';
 import { JwtHelperService } from "@auth0/angular-jwt"
+import { LoginServices } from '../../../service/login-services';
 
 const jwtHelper = new JwtHelperService()
 
@@ -11,6 +12,7 @@ const jwtHelper = new JwtHelperService()
   styleUrl: './home.css'
 })
 export class Home implements OnInit{
+  public login = inject(LoginServices)
   private infoApi = inject(InfoApi)
   info!: any[] 
   usernName!: any

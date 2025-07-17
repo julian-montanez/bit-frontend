@@ -6,6 +6,8 @@ import { AboutUs } from './component/pages/about-us/about-us';
 import { SignUp } from './component/pages/sign-up/sign-up';
 import { LogIn } from './component/pages/log-in/log-in';
 import { CreateInfo } from './component/pages/create-info/create-info';
+import { activateGuard } from './guards/activate-guard';
+import { InfoPost } from './component/pages/info-post/info-post';
 
 export const routes: Routes = [
     {
@@ -36,7 +38,13 @@ export const routes: Routes = [
     {
         path : "create-info",
         component:CreateInfo,
-        title: "page | create-info"
+        title: "page | create-info",
+        canActivate:[activateGuard]
+    },
+    {
+        path : "info-post/:nameDessert", 
+        component:InfoPost,
+        title: "page | posts" 
     },
     {
         path: "",

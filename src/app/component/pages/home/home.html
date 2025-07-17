@@ -1,6 +1,6 @@
-@if (usernName) {
+@if (login.userlogged()) {
     <h2>hola {{usernName}}</h2>
-} @else if (!usernName) {
+} @else {
     <h2>inicio</h2>
 }
 

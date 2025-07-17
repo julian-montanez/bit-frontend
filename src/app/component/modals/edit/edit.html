@@ -1,0 +1,31 @@
+<div class="E-container">
+    <button (click)="closeEdit(true)">close</button>
+    <form [formGroup]="post" (ngSubmit)="submitInfo()">
+        <div>
+            <label for="nameDessertEdit">name dessert</label>
+            <textarea type="text"  formControlName="nameDessert" id="nameDessertEdit"></textarea>
+        </div>
+        <div>
+            <label for="ingredientsEdit">ingredients</label>
+            <textarea type="text" formControlName="ingredients" id="ingredientsEdit"></textarea>
+        </div>
+        <div>
+            <label for="preparationEdit">preparation</label>
+            <textarea type="text" formControlName="howToMake" id="preparationEdit"></textarea>
+        </div>
+        <div>
+            <label for="categoryEdit">category</label>
+            <select name="category" formControlName="category" id="categoryEdit">
+                <option value="pasteles">pasteles</option>
+                <option value="helados">helados</option>
+                <option value="bebidas">bebidas</option>
+                <option value="otros">otros</option>
+            </select>
+        </div>
+        <div>
+            <label for="imageEdit">image</label>
+            <textarea type="text" formControlName="image" id="imageEdit"></textarea>
+        </div>
+        <button type="submit">edit</button>
+    </form>
+</div>

@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormsModule, FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LoginServices } from '../../../service/login-services';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-log-in',
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
 export class LogIn {
   login = inject(LoginServices)
   router = inject(Router)
+  toastr = inject(ToastrService)
   form: any
   
   formLogIn = new FormGroup({
@@ -24,6 +26,7 @@ export class LogIn {
       this.form = this.formLogIn.value
       this.login.loginUser(this.form).subscribe((res:any)=>{
         if (res.allOk) {
+          this.toastr.success(`login success`)
           localStorage.setItem("token:", res.data)
           this.router.navigateByUrl("/home")
           console.log("res:", res);
