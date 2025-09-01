@@ -4,3 +4,10 @@
     background-color: beige;
     margin: 30px auto;
 }
+
+h1{
+    text-align: center;
+    margin: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    -webkit-text-stroke: 2px azure;
+}

@@ -1,6 +1,10 @@
 .container-menu{
+    border-top: 2px solid black;
+}
+
+.navbar-nav{
     display: flex;
     justify-content: space-evenly;
-    background-color: aqua;
-    border-top: 2px solid black;
+    width: 100%;
+
 }

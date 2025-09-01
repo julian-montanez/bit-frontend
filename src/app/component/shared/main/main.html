@@ -1,16 +1,26 @@
-<div class="container-main">
-    <div class="logo-search">
-        <a href="">
-            <img src="" alt="log">
-        </a>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid container-main">
+        <div class="logo-search">
+            <a href="">
+                <img src="" alt="log">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse sig-log">
+            <ul class="navbar-nav">
+                @if (!login.userlogged()) {
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="log-in">log in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="sign-up">sign up</a>
+                    </li>
+                } @else {
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="create-info">create info</a>
+                    </li>
+                    <button type="button" class="log-out btn btn-warning" (click)="login.userlogout()">log out</button>
+                }
+            </ul>
+        </div>
     </div>
-    <div class="sig-log">
-    @if (!login.userlogged()) {
-        <a routerLink="log-in">log in</a>
-        <a routerLink="sign-up">sign up</a>
-    } @else {
-        <a routerLink="create-info">create info</a>
-        <button class="log-out" (click)="login.userlogout()">log out</button>
-    }
-    </div>
-</div>
+</nav>

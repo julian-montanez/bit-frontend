@@ -1,13 +1,13 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Enviroment } from '../enviroment/enviroment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InfoApi {
   
-  private infoApi = "http://localhost:3000/info"
+  private infoApi = Enviroment.apiUrlInfo
   private httpclient = inject(HttpClient)
 
   getinfo() {
@@ -15,11 +15,11 @@ export class InfoApi {
   }
 
   infoPost(data:any){
-  return this.httpclient.get(`http://localhost:3000/info/${data}`)
+  return this.httpclient.get(`${this.infoApi}/${data}`)
 }
 
-  public getInfoId(id: string): Observable<any> {
-  return this.httpclient.get<any>(`${this.infoApi}/${id}`);
-}
+//   public getInfoId(id: string): Observable<any> {
+//   return this.httpclient.get<any>(`${this.infoApi}/${id}`);
+// }
 }
 

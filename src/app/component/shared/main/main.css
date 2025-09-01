@@ -1,8 +1,8 @@
 .container-main{
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    background-color: aqua;
+    justify-content: space-around;
 }
 
 .logo-search{
@@ -10,11 +10,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: aquamarine;
 }
 
 .sig-log{
-    width: 200px;
     display: flex;
-    justify-content: space-between;
+    justify-content:right;
 }

@@ -1,14 +1,14 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Enviroment } from '../enviroment/enviroment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersRegistered {
-constructor() { }
 
 private httpclient = inject(HttpClient)
-private api = "http://localhost:3000/user/sign-up";
+private api = `${Enviroment.apiUrlUser}/sign-up`;
 
 putUser(payload:any){
   return this.httpclient.post(this.api, payload)

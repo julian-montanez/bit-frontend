@@ -17,12 +17,24 @@ export class Edit implements OnInit{
   @Input() cat:string = ""
   @Input() id:string = ""
   print!:any
+  printPage!:Info
+
+  editform!: any
 
   ngOnInit(): void {
     this.updateInfo.printInfo(this.cat, this.id).subscribe((res:any)=>{
-      const {nameDessert, ingredients, howToMake, category, image} = res.data[0];
-      this.print = {nameDessert, ingredients, howToMake, category, image}
+      this.print = res.data[0]
       console.log(this.print);
+      const {nameDessert, ingredients, howToMake, category, image} = res.data[0];
+      this.printPage = {nameDessert, ingredients, howToMake, category, image}
+      console.log(this.printPage);
+      this.editform = new FormGroup({
+        nameDessert: new FormControl(this.printPage.nameDessert, Validators.required),
+        ingredients: new FormControl(this.printPage.ingredients, Validators.required),
+        howToMake: new FormControl(this.printPage.howToMake, Validators.required),
+        category: new FormControl(this.printPage.category, Validators.required),
+        image: new FormControl(this.printPage.image, Validators.required),
+      })
     })
   }
 
@@ -39,7 +51,7 @@ export class Edit implements OnInit{
   })
 
   submitInfo(){
-    this.updateInfo.updateInfo(this.print._id, this.post.value).subscribe({
+    this.updateInfo.updateInfo(this.print._id, this.editform.value).subscribe({
       next: (respuesta) => console.log('Actualizado:', respuesta),
       error: (error) => console.error('Error al actualizar:', error)
     })

@@ -1,17 +1,17 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Enviroment } from '../enviroment/enviroment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginServices {
-  constructor() {}
 
   private http = inject(HttpClient)
   private router = inject(Router)
-  private api = "http://localhost:3000/user/log-in";
-  apiUser = "http://localhost:3000/user/"
+  private api = `${Enviroment.apiUrlUser}/log-in`;
+  apiUser = Enviroment.apiUrlUser
 
 
 loginUser(payload:any){
@@ -33,6 +33,6 @@ userlogout(){
 }
 
 userdata(data:any){
-  return this.http.get(`http://localhost:3000/user/${data}`)
+  return this.http.get(`${this.apiUser}/${data}`)
 }
 }

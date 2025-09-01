@@ -1,11 +1,12 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Enviroment } from '../enviroment/enviroment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UpdateInfo {
-  private apiInfo = "http://localhost:3000/info"
+  private apiInfo = Enviroment.apiUrlInfo
   private httpcli = inject(HttpClient)
 
   printInfo(cat:string, id:string){

@@ -7,7 +7,6 @@ import { LoginServices } from '../../../service/login-services';
 import { RouterLink } from '@angular/router';
 import { DeleteInfo } from '../../../service/delete-info';
 import { Edit } from '../../modals/edit/edit';
-import { Delete } from '../../modals/delete/delete';
 import { COModal } from '../../../service/co-modal';
 
 const jwtHelper = new JwtHelperService()

@@ -24,7 +24,6 @@ export class SignUp {
   submitForm(){
     this.form = this.formSignUp.value
     if (this.formSignUp.valid && this.formSignUp.value.password === this.formSignUp.value.VPassword) {
-      console.log(this.form);
       this.userR.putUser(this.form).subscribe((res:any)=>{
         if (res.allOk) {
           console.log("res:", res);

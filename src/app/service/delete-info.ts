@@ -1,12 +1,13 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Enviroment } from '../enviroment/enviroment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DeleteInfo {
   private httpcli = inject(HttpClient)
-  private infoApi = "http://localhost:3000/info"
+  private infoApi = Enviroment.apiUrlInfo
 
 
   deleteInfoById(data:any){

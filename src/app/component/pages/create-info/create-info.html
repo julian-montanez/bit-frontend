@@ -1,31 +1,31 @@
 <div class="CI-container">
-    <form [formGroup]="post" (ngSubmit)="submitInfo()">
-        <div>
-            <label for="nameDessert">name dessert</label>
-            <input type="text"  formControlName="nameDessert" id="nameDessert">
+    <form [formGroup]="post" (ngSubmit)="submitInfo()" >
+        <div class="mb-3">
+            <label for="nameDessert" class="form-label">name dessert</label>
+            <input type="text" formControlName="nameDessert" class="form-control" id="nameDessert">
         </div>
-        <div>
-            <label for="ingredients">ingredients</label>
-            <input type="text" formControlName="ingredients" id="ingredients">
+        <div class="mb-3">
+            <label for="ingredients" class="form-label">ingredients</label>
+            <textarea type="text" formControlName="ingredients" class="form-control text" id="ingredients"></textarea>
         </div>
-        <div>
-            <label for="preparation">preparation</label>
-            <input type="text" formControlName="howToMake" id="preparation">
+        <div class="mb-3">
+            <label for="preparation" class="form-label">preparation</label>
+            <textarea type="text" formControlName="howToMake" class="form-control text" id="preparation"></textarea>
         </div>
-        <div>
-            <label for="category">category</label>
-            <select name="category" formControlName="category" id="category">
+        <div class="mb-3">
+            <label for="category" class="form-label">category</label>
+            <select name="category" formControlName="category" class="form-control" id="category">
                 <option value="pasteles">pasteles</option>
                 <option value="helados">helados</option>
                 <option value="bebidas">bebidas</option>
                 <option value="otros">otros</option>
             </select>
         </div>
-        <div>
-            <label for="image">image</label>
-            <input type="text" formControlName="image" id="image">
+        <div class="mb-3">
+            <label for="image" class="form-label">image</label>
+            <input type="text" formControlName="image" class="form-control" id="image">
         </div>
-        <button type="submit">post</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
 <div class="post-user">
@@ -33,14 +33,14 @@
         <div class="post">
             <a routerLink="/info-post/{{post.category}}/{{post._id}}" class="post-link">
                 <img src="{{post.image}}" alt="{{post.nameDessert}}" class="image">
-                <p>{{post.nameDessert}}</p>
-                <p>{{post.category}}</p>
+                <p class="texto-info">{{post.nameDessert}}</p>
+                <p class="texto-info">{{post.category}}</p>
             </a>
             <div class="button-options">
-                <button class="delete" (click)="delete(post._id)">
+                <button type="button" class="delete btn btn-danger" (click)="delete(post._id)">
                     delete
                 </button>
-                <button class="edit" (click)="edit(post.category, post._id)">
+                <button type="button" class="edit btn btn-secondary" (click)="edit(post.category, post._id)">
                     edit
                 </button>
             </div>
